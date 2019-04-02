@@ -69,7 +69,7 @@ services:
 
   filebeat:
     container_name: filebeat
-    build: /filebeat/Dockerfile
+    build: ./filebeat/Dockerfile
     volumes:
       - /tmp/Log/:/usr/share/filebeat/Log/
     restart: always
