@@ -76,5 +76,14 @@ services:
     restart: always
     networks:
       - esnet
+
+  dotnetcoreapi:
+    container_name: netcorenlog
+    image: dotnetcoreapi:v2
+    ports: 
+      - 8181:80
+    volumes: 
+      - /tmp/Log:/app/Log
+
 networks:
   esnet:
