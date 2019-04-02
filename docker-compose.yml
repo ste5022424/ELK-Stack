@@ -51,7 +51,7 @@ services:
     container_name: logstash
     volumes:
       - /tmp/Log/:/usr/share/logstash/Log
-      - /data/logstash/pipeline:/usr/share/logstash/pipeline/
+      - /logstash/:/usr/share/logstash/pipeline/
     restart: always
     networks:
     - esnet
@@ -69,10 +69,10 @@ services:
       - esnet
 
   filebeat:
-    build: /filebeat
     container_name: filebeat
     volumes:
       - /tmp/Log/:/usr/share/filebeat/Log
+      - /filebeat/:/usr/share/filebeat/filebeat.yml
     restart: always
     networks:
       - esnet
