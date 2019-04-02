@@ -69,10 +69,9 @@ services:
 
   filebeat:
     container_name: filebeat
-    image: docker.elastic.co/beats/filebeat:6.7.0
+    build: /filebeat/Dockerfile
     volumes:
       - /tmp/Log/:/usr/share/filebeat/Log/
-      - /data/filebeat/:/usr/share/filebeat/
     restart: always
     networks:
       - esnet
