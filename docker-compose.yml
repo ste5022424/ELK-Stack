@@ -47,7 +47,7 @@ services:
     container_name: logstash
     volumes:
     - /tmp/Log/:/usr/share/logstash/Log
-    - /tmp/logstash/pipeline:/usr/share/logstash/pipeline/
+    - /data/logstash/pipeline:/usr/share/logstash/pipeline/
     restart: always
     links:
     - elasticsearch:elasticsearch
