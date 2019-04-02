@@ -50,8 +50,7 @@ services:
     image: docker.elastic.co/logstash/logstash:6.7.0
     container_name: logstash
     volumes:
-      - /tmp/Log/:/usr/share/logstash/Log
-      - /logstash/:/usr/share/logstash/pipeline/
+      - /logstash/pipeline:/usr/share/logstash/pipeline/
     restart: always
     networks:
     - esnet
@@ -72,8 +71,8 @@ services:
     container_name: filebeat
     image: docker.elastic.co/beats/filebeat:6.7.0
     volumes:
-      - /tmp/Log/:/usr/share/filebeat/Log
-      - /filebeat/:/usr/share/filebeat/filebeat.yml
+      - /tmp/Log/:/usr/share/filebeat/Log/
+      - /filebeat/:/usr/share/filebeat/
     restart: always
     networks:
       - esnet
